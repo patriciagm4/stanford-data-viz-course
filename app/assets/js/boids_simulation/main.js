@@ -154,41 +154,41 @@ gui.add(controls_state, 'coeff_separation', 0, 10)
         }
     });
 
+/**
+    * Actions Required: Update each boid's 'coeff_alignment' parameter according to the value in the gui
+    * hint: coeff_separation is done for you on line 153
+**/
+
 gui.add(controls_state, 'coeff_alignment', 0, 10)
     .onChange(function(value) {
-
-        /**
-            * Actions Required: Update each boid's 'coeff_alignment' parameter according to the value in the gui
-            * hint: coeff_separation is done for you on line 153
-        **/
         
         for (var i = 0; i < boids.length; i++) {
             // ... your code here ...
         }
 
-        console.warn("Action Required: In boids_simulation/main.js line 166, complete the logic for the 'coeff_alignment' slider");
-
-        /* end action required section */
-
     });
+
+console.warn("Action Required: In boids_simulation/main.js line 166, complete the logic for the 'coeff_alignment' slider");
+
+/* end action required section */
+
+/**
+    * Action Required: Update each boid's 'coeff_cohesion' parameter according to the value in the gui
+    * hint: coeff_separation is done for you on line 153
+**/
 
 gui.add(controls_state, 'coeff_cohesion', 0, 10)
     .onChange(function(value) {
         
-        /**
-            * Action Required: Update each boid's 'coeff_cohesion' parameter according to the value in the gui
-            * hint: coeff_separation is done for you on line 153
-        **/
-        
         for (var i = 0; i < boids.length; i++) {
             // ... your code here ...
         }
 
-        console.warn("Action Required: In boids_simulation/main.js line 184, complete the logic for the 'coeff_cohesion' slider");
-
-        /* end action required section */
-
     });
+
+console.warn("Action Required: In boids_simulation/main.js line 184, complete the logic for the 'coeff_cohesion' slider");
+
+/* end action required section */
 
 gui.add(controls_state, 'n_boids', 0, 1000)
     .onChange(function(value) {

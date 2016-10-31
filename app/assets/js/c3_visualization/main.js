@@ -3,14 +3,14 @@ console.warn("------------------- c3_visualization/main.js START ---------------
 // set your data
 
 /**
-    * Action Required: IF YOU ARE USING AN API, then set 'data_url' to your URL, OTHERWISE IGNORE THIS STEP
+    * Action Required: IF YOU ARE USING AN API, then set 'c3_data_url' to your URL, OTHERWISE IGNORE THIS STEP
     * example: http://data.datavizcourse.com/api/v1.0/data/c3_data/ ---> http://punctual-cheesecake-5159.herokuapp.com/api/v1.0/data/c3_data/
     * make sure you use HTTP and not HTTPS
 **/
 
-var data_url = "http://data.datavizcourse.com/api/v1.0/data/c3_data/";
+var c3_data_url = "http://data.datavizcourse.com/api/v1.0/data/c3_data/";
 
-console.warn("Action Required: In c3_visualization/main.js line 10, IF your are using an api, THEN change the 'data_url' variable to your url.")
+console.warn("Action Required: In c3_visualization/main.js line 10, IF your are using an api, THEN change the 'c3_data_url' variable to your url.")
 
 /* end action required section */
 
@@ -19,7 +19,7 @@ console.warn("Action Required: In c3_visualization/main.js line 10, IF your are 
 /**
     * Action Required: if your are NOT using an api, then change 'my_c3_data' to your own data
     * an example is shown below
-    ** Important note: my_c3_data is NOT the same as the data returned by the API at data_url, however the chart configuration produces the same result
+    ** Important note: my_c3_data is NOT the same as the data returned by the API at c3_data_url, however the chart configuration produces the same result
 **/
 
 var my_c3_data = [
@@ -65,7 +65,7 @@ var c3_chart_parameters = {
 
 
         // start -- IF you are using an API then, these lines are useful
-        "url": data_url,
+        "url": c3_data_url,
         "mimeType": 'json',
         "keys":{
             "value": ["X Label", "X Label (some category)", "Y Label", "Y Label (some category)"]

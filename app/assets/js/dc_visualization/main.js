@@ -5,9 +5,9 @@ console.warn("------------------- dc_visualization/main.js START ---------------
     * make sure you use HTTP and not HTTPS
 **/
 
-var data_url = "http://data.datavizcourse.com/api/v1.0/data/iris/";
+var dc_data_url = "http://data.datavizcourse.com/api/v1.0/data/iris/";
 
-console.warn("Action Required: In dc_visualization/main.js line 10, change the 'data_url' variable to your own Heroku Application's URL.");
+console.warn("Action Required: In dc_visualization/main.js line 10, change the 'dc_data_url' variable to your own Heroku Application's URL.");
 
 /* end action required section */
 
@@ -15,7 +15,7 @@ console.warn("Action Required: In dc_visualization/main.js line 10, change the '
 // ------------------------------------------------------------------
 // load data, upon downloading the remote data, execute the callback function defined in the second argument
 
-d3.json(data_url, function(remote_json){
+d3.json(dc_data_url, function(remote_json){
 	
   // ------------------------------------------------------------------
   // initialize crossfilter
