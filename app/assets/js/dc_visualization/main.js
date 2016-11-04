@@ -112,4 +112,4 @@ d3.json(dc_data_url, function(remote_json){
 
       // after resetting the filters, redraw all of the charts (automatically removes the filter overlay)
       dc.redrawAll(); 
-    });
+    };
