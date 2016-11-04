@@ -5,7 +5,7 @@
 		<link href="assets/images/favicon.ico" rel="shortcut icon" type="image/x-icon">
 		<meta charset="utf-8">
 		
-		<title>CME 151 Data Visualization Portfolio of --YOUR NAME HERE--</title>
+		<title>CME 151 Data Visualization Portfolio of Patricia Gonzales</title>
 
 		<!-- css for boostrap -->
 		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
@@ -38,7 +38,7 @@
 					<!-- begin section: header -->
 
 					<div class="col-xs-12 col-md-12">
-						<h1>Visualization Portfolio of --YOUR NAME HERE--</h1>
+						<h1>Visualization Portfolio of Patricia Gonzales</h1>
 						<h4><a href="http://www.datavizcourse.com" target="_blank">CME 151: Data Visualization</a> <small>Fall 2016</small>
 						<hr>
 					</div>
@@ -102,11 +102,11 @@
 					
 					<div class="col-xs-12 col-md-12">
 						<h3>
-							Title of Your C3 Visualization Here (Example: C3.js Visualization of Health Disparities from the World Health Organization)
+							C3.js Visualization of income and water demand in BAWSCA
 						</h3>
 
 						<p>
-							This is where you write a detailed explanation of your visualization. Start with the type of interaction you are displaying. For example, "This is a {storytelling, dynamic, interactive} visualization of xyz." Then explain what is being shown. Explain what the user can interact with. For example, "Brushing and linking are enabled, so you can filter data on chart and watch all of the other charts update." Explain why the data is interesting to you. Where did the data come from? Why is it important? Finally, tell the viewer about how it was made. For example, "Data were initially obtained from the source below, pre-processed with Python, and the visualization was prototyped with JSFiddle." Did you encounter any challenges in making it? Why did you pick the visualization library and would you recommend these libraries for this purpose? For example, "Three.js was chosen for its hierarchical representation of 3D objects, easy positioning in 3D space, and fast GPU rendering." Would you do anything different or do you plan to do any more work on this visualization?
+							This is where you write a detailed explanation of your visualization. Why is interesting to you? Where did the data come from? Did you encounter any challanges in making it?
 						</p>
 
 						<p>
@@ -122,7 +122,7 @@
 						</p>
 
 						<p>
-							Data was obtained from <a href="https://www.your_data_source_here.com/your_data" target="_blank">--Your Data Source--</a>. Example Information: The particular 400 colleges on the plot were selected randomly from those in the College Scorecard Dataset, and make up roughly 10% of the total number of colleges for which this data is available.
+							Data was obtained from <a href="http://bawsca.org/uploads/userfiles/files/BAWSCA_AnnualSurvey_FY2014-15.pdf" target="_blank">--BAWSCA Annual survey for Fiscal Year 2014-15--</a>.
 						</p>
 
 						<hr>
@@ -130,12 +130,14 @@
 						<!-- begin container: c3 visualization -->
 						<div class="container-fluid" style="margin-top:10px;">
 						    <div class="row">
-						        <div class="col-xs-12 col-md-8">
-						            <div id="c3js_visualization_container"></div>
+						        <div class="col-md-8">
+						            <div id="c3_visualization_container"></div>
 						        </div>
-						        <div class="col-xs-12 col-md-4 pull-right well" style="min-height: 320px; position: relative;">
+						        <div class="col-md-4 well pull-right">
+						        	<h2>Income is an important driver of water demand in BAWSCA</h2>
+     								<hr>
 						            <p id="c3js_message"></p>
-						            <button id="c3js_start_btn" class="btn btn-primary" style="right: 15px; bottom: 15px; position: absolute;">Start</button>
+						            <button id="c3js_start_btn" class="btn btn-primary pull-right">Start</button>
 						        </div>
 						    </div>
 						</div>
@@ -191,45 +193,42 @@
 						    <tr>
 						        <td>
 						            <div style="float:left;">
+						                <h3>Species</h3>
+						                <div id="species_chart"></div>
+						            </div>	
+						        </td>
+						        <td>					        
+						            <div style="float:left;">
 						                <h3>Sepal Length</h3>
-						                <div id="sepal_length_chart" class="dc_chart"></div>
+						                <div id="sepal_length_chart"></div>
 						            </div>
 						        </td>
 						        <td>
 						            <div style="float:left;">
 						                <h3>Sepal Width</h3>
-						                <div id="sepal_width_chart" class="dc_chart"></div>
+						                <div id="sepal_width_chart"></div>
 						            </div>
 						        </td>
 						        <td>
 						            <div style="float:left;">
 						                <h3>Petal Length</h3>
-						                <div id="petal_length_chart" class="dc_chart"></div>
+						                <div id="petal_length_chart"></div>
 						            </div>
 						        </td>
 						        <td>
 						            <div style="float:left;">
 						                <h3>Petal Width</h3>
-						                <div id="petal_width_chart" class="dc_chart"></div>
-						            </div>
-						        </td>
-						        <td>
-						            <div style="float:left;">
-						                <h3>Species</h3>
-						                <div id="species_chart" class="dc_chart"></div>
+						                <div id="petal_width_chart"></div>
 						            </div>
 						        </td>
 						    </tr>
 						    <tr>
-						        <td></td>
-						        <td></td>
-						        <td></td>
-						        <td></td>
 						        <td>
-						        	<button id="dcjs_reset_btn" class="btn btn-primary">Reset Filters</button>
+						            <div style="float:left;" id="dcjs_reset_btn_container"> </div>
 						        </td>
 						    </tr>
 						</table>
+
 						<hr>
 					</div>
 
