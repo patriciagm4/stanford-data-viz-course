@@ -206,6 +206,6 @@ d3.select("#c3js_start_btn").on("click", begin_c3_slideshow);
 
 // if loading from a URL, then calling begin_c3_slideshow() here is redundant 
 // since 'data.onfinishloading' already calls begin_c3_slideshow() after the data is retrieved
-if(c3_chart_parameters.data.onfinishloading == undefined){
+if(my_chart_parameters.data.onfinishloading == undefined){
     begin_c3_slideshow();
 }

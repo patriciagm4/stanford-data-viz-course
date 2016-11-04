@@ -150,9 +150,7 @@ gui.add(controls_state, 'coeff_cohesion', 0, 10)
         for (var i = 0; i < boids.length; i++) {
             boids[i].coeff_cohesion = value;
         }
-
     });
-
 
 gui.add(controls_state, 'n_boids', 0, 1000)
     .onChange(function(value) {
@@ -183,13 +181,6 @@ gui.add(controls_state, 'n_boids', 0, 1000)
 // ------------------------------------------------------------------------------------------------
 // animation loop
 
-/**
-    * Action Required: Run the flocking simulation for each boid and update the visual element's position
-    * step 1: run the simulation (data update)
-    * step 2: update the position of the mesh (visual update)
-    * freebie: uncomment lines 236-237 below
-**/
-
 function animate() {
     // start stats recording
     stats.begin();
@@ -197,8 +188,8 @@ function animate() {
     // render boids
     for (var i = 0; i < boids.length; i++) {
         b = boids[i];
-        // b.run(boids);     // update the position of each boid (data)
-        // b.update_mesh();  // update the position of the mesh (data --> visual)
+        b.run(boids);     // update the position of each boid (data)
+        b.update_mesh();  // update the position of the mesh (data --> visual)
     }
 
     // render scene
@@ -211,11 +202,6 @@ function animate() {
     requestAnimationFrame(animate);
 }
 
-console.warn("Action Required: In boids_simulation/main.js lines 236-237, complete the logic for running the simulation and updating the visual element position. It's a freebie, just uncomment lines 236-237.");
-
-/* end action required section */
 
 // start visualization
 requestAnimationFrame(animate);
-
-console.warn("------------------- boids_simulation/main.js END -------------------"); console.log("");
