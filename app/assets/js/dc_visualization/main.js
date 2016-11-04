@@ -100,43 +100,16 @@ d3.json(dc_data_url, function(remote_json){
   // ------------------------------------------------------------------
   // handle the reset button
 
-  var showButton = function(){
-    
-    if(species_chart.filters().length > 0
-    	|| sepal_length_chart.filters().length > 0
-      || sepal_width_chart.filters().length > 0
-      || petal_length_chart.filters().length > 0
-    	|| petal_width_chart.filters().length > 0){
-        
-        d3.select("#dcjs_reset_btn")
-        	.remove();
-        
-        d3.select("#dcjs_reset_btn_container")
-          .append("button")
-          .attr("id","dcjs_reset_btn")
-          .attr("class","btn btn-primary")
-          .text("Reset")
-          .on("click", function(){
-              species_chart.filter(null);
-              sepal_length_chart.filter(null);
-              sepal_width_chart.filter(null);
-              petal_length_chart.filter(null);
-              petal_width_chart.filter(null);
-              dc.redrawAll();
-          });
-        
-    } else {
-        
-    	d3.select("#dcjs_reset_btn")
-    		.remove();
-    }
-	
-  };
+  d3.select("#dcjs_reset_btn")
+    .on("click", function(){
+      // try-catch since the code for sepal_width_chart, petal_length_chart, ... etc may be incomplete
+      try{ sepal_length_chart.filter(null); } catch(e){ }
+      try{ sepal_width_chart.filter(null);  } catch(e){ }
+      try{ petal_length_chart.filter(null); } catch(e){ }
+      try{ petal_width_chart.filter(null);  } catch(e){ }
+      try{ species_chart.filter(null);      } catch(e){ }
 
-  species_chart.on('filtered', function(){showButton();});
-  sepal_length_chart.on('filtered', function(){showButton();});
-  sepal_width_chart.on('filtered', function(){showButton();});
-  petal_length_chart.on('filtered', function(){showButton();});
-  petal_width_chart.on('filtered', function(){showButton();});
-
+      // after resetting the filters, redraw all of the charts (automatically removes the filter overlay)
+      dc.redrawAll(); 
+    });
 });
