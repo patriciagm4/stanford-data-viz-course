@@ -41,37 +41,12 @@ d3.json(dc_data_url, function(remote_json){
   // build charts
   // note that the ids for each chart are provided for you (these ids are reflected in index.html)
 
-  var sepal_length_chart = dc
-    .barChart("#sepal_length_chart")
-    .width(250)
-    .height(200)
-    .dimension(dim_sepal_length)
-    .group(group_sum_sepal_length)
-    .centerBar(true)
-    .x( d3.scale.linear().domain([3,10]) )
-    .xUnits(dc.units.fp.precision(.5));
-
-  /**
-      * Action Required: define grouping functions for each dimension 
-      * hint: The div ids are written for you and commented out. These reference each chart's unique div id as specified in index.html
-      * hint: sepal_length_chart is done for you, the others look the same (except species_chart)
-      * freebie: 
-        var species_chart = dc
-          .barChart("#species_chart")
-          .width(250)
-          .height(200)
-          .dimension(dim_species)
-          .group(group_count_species)
-          .centerBar(true)
-          .x(d3.scale.ordinal().domain(species_names))
-          .xUnits(dc.units.ordinal)
-  **/
   var species_chart = dc
     .barChart("#species_chart")
     .width(240)
     .height(200)
-    .dimension(species)
-    .group(species_sum)
+    .dimension(dim_species)
+    .group(group_count_species)
     .centerBar(true)
     .x(d3.scale.ordinal().domain(species_names))
     .xUnits(dc.units.ordinal);
@@ -80,8 +55,8 @@ d3.json(dc_data_url, function(remote_json){
     .barChart("#sepal_length_chart")
     .width(240)
     .height(200)
-    .dimension(sepal_length)
-    .group(sepal_length_sum)
+    .dimension(dim_sepal_length)
+    .group(group_sum_sepal_length)
     .centerBar(true)
     .x( d3.scale.linear().domain([3,10]) )
     .xUnits(dc.units.fp.precision(.5));
@@ -92,16 +67,16 @@ d3.json(dc_data_url, function(remote_json){
   	.height(200)
   	.radius(100)
   	.innerRadius(50)
-  	.dimension(sepal_width)
-  	.group(sepal_width_sum)   
+  	.dimension(dim_sepal_width)
+  	.group(group_sum_sepal_width)   
   	.renderLabel(true);
 
   var petal_length_chart = dc
     .barChart("#petal_length_chart")
     .width(240)
     .height(200)
-    .dimension(petal_length)
-    .group(petal_length_sum)
+    .dimension(dim_petal_length)
+    .group(group_sum_petal_length)
     .centerBar(true)
     .x( d3.scale.linear().domain([0,8]) )
     .xUnits(dc.units.fp.precision(0.5));
@@ -112,8 +87,8 @@ d3.json(dc_data_url, function(remote_json){
   	.height(200)
   	.radius(100)
   	.innerRadius(50)
-  	.dimension(petal_width)
-  	.group(petal_width_sum)
+  	.dimension(dim_petal_width)
+  	.group(group_sum_petal_width)
   	.renderLabel(true);
 
   
