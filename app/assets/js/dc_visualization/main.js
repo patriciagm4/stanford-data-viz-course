@@ -1,16 +1,3 @@
-/* 
-
-API returns entire iris dataset
-http://data.datavizcourse.com/api/v1.0/data/iris/
-
-API returns n=10 entries from dataset, useful for debugging
-http://data.datavizcourse.com/api/v1.0/data/iris/limit/10/
-
-data is in this format
-{"sepal_length":5.1,"sepal_width":3.5,"petal_length":1.4,"petal_width":0.2,"species":"setosa"}
-
-*/
-
 
 // ------------------------------------------------------------------
 // load data
@@ -99,9 +86,6 @@ d3.json("http://data.datavizcourse.com/api/v1.0/data/iris/", function(remote_jso
   	.group(petal_width_sum)
   	.renderLabel(true);
 
-  // ------------------------------------------------------------------
-  // no further editing is requred, the rest is provided for you
-  
   // ------------------------------------------------------------------
   // render everything
   
