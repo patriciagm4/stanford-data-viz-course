@@ -77,14 +77,9 @@ d3.json(data_url, function(remote_json) {
   		.renderLabel(true);
 
 
-  ==================================================================
-   No Further Action Required: the rest is provided for you 
-  ================================================================== 
-  **/
-    // ------------------------------------------------------------------
     // render everything
     dc.renderAll();
-    // ------------------------------------------------------------------
+
     // handle the reset button
     d3.select("#dcjs_reset_btn").on("click", function() {
         // try-catch since the code for sepal_width_chart, petal_length_chart, ... etc may be incomplete
