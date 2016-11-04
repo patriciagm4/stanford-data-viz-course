@@ -103,11 +103,12 @@ d3.json(dc_data_url, function(remote_json){
   d3.select("#dcjs_reset_btn")
     .on("click", function(){
       // try-catch since the code for sepal_width_chart, petal_length_chart, ... etc may be incomplete
+      try{ species_chart.filter(null);      } catch(e){ }      
       try{ sepal_length_chart.filter(null); } catch(e){ }
       try{ sepal_width_chart.filter(null);  } catch(e){ }
       try{ petal_length_chart.filter(null); } catch(e){ }
       try{ petal_width_chart.filter(null);  } catch(e){ }
-      try{ species_chart.filter(null);      } catch(e){ }
+
 
       // after resetting the filters, redraw all of the charts (automatically removes the filter overlay)
       dc.redrawAll(); 
