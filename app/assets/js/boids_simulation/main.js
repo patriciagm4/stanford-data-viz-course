@@ -1,5 +1,3 @@
-console.warn("------------------- boids_simulation/main.js START -------------------");
-// ------------------------------------------------------------------------------------------------
 // renderer, camera, scene 
 
 // constants
@@ -35,23 +33,7 @@ var n_boids = 400,
 for (var i = 0; i < n_boids; i++) {
     var b = new Boid(scene_width, scene_height);
     b.create_mesh();       // defined in boids_prototypes_for_three.js
-
-    /**
-        * Actions Required:
-        * the mesh is a combination of gemoetry and material that can be moved around on the scene
-        * your job is to add the arrow's mesh to the container 
-        * use the methods defined in boids_prototypes_for_three.js
-        * freebie: container.add(b.mesh);
-
-    **/
-
-    // container.add(b.mesh);
-
-    // delete this line
-    if(i == 1) console.warn("Action Required: In boids_simulation/main.js line 48, add the mesh inside the arrow helper to the container. It's a freebie, just uncomment line 48."); 
-    
-    /* end action required section */
-
+    container.add(b.mesh);
     boids.push(b); // add this boid to the array
 }
 
@@ -154,41 +136,23 @@ gui.add(controls_state, 'coeff_separation', 0, 10)
         }
     });
 
-/**
-    * Actions Required: Update each boid's 'coeff_alignment' parameter according to the value in the gui
-    * hint: coeff_separation is done for you on line 153
-**/
-
 gui.add(controls_state, 'coeff_alignment', 0, 10)
     .onChange(function(value) {
         
         for (var i = 0; i < boids.length; i++) {
-            // ... your code here ...
+            boids[i].coeff_alignment = value;
         }
-
     });
-
-console.warn("Action Required: In boids_simulation/main.js line 166, complete the logic for the 'coeff_alignment' slider");
-
-/* end action required section */
-
-/**
-    * Action Required: Update each boid's 'coeff_cohesion' parameter according to the value in the gui
-    * hint: coeff_separation is done for you on line 153
-**/
 
 gui.add(controls_state, 'coeff_cohesion', 0, 10)
     .onChange(function(value) {
         
         for (var i = 0; i < boids.length; i++) {
-            // ... your code here ...
+            boids[i].coeff_cohesion = value;
         }
 
     });
 
-console.warn("Action Required: In boids_simulation/main.js line 184, complete the logic for the 'coeff_cohesion' slider");
-
-/* end action required section */
 
 gui.add(controls_state, 'n_boids', 0, 1000)
     .onChange(function(value) {
